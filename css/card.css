@@ -1,0 +1,119 @@
+.card {
+    margin: 10px;
+}
+
+.card_strp {
+    background: repeating-linear-gradient(332deg,
+            #ffffff,
+            #ffffff 5px,
+            #e7e7e7 5px,
+            #e7e7e7 10px);
+    position: relative;
+}
+
+.card.hori:hover,
+.card.veti:hover {
+    border: 1px dashed #808080 !important;
+    opacity: 0.5;
+}
+
+.card.hori {
+    width: 320px;
+    height: 202px;
+    min-width: 320px;
+    min-height: 202px;
+    max-width: 320px;
+    max-height: 202px;
+}
+
+.card.veti {
+    width: 202px;
+    height: 320px;
+    min-width: 202px;
+    min-height: 320px;
+}
+
+.card.sig {
+    padding: 6px;
+}
+
+.card.wbk {
+    background: #fff;
+    color: #000;
+}
+
+.card .cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: #d3d3d3b3;
+    z-index: 2;
+}
+
+.card .cover a {
+    border: initial;
+    border-radius: initial;
+}
+
+.card:hover .cover {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #000000;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bk {
+    width: 202px;
+    height: 320px;
+    position: absolute;
+    z-index: -1;
+}
+
+.loc {
+    display: flex;
+    justify-content: space-between;
+}
+
+form#edit img.locSel {
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+    object-position: center center;
+}
+
+.club {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modal--show .modal-content>* {
+    max-width: 100%;
+    margin: 1em auto;
+}
+
+.name ruby {
+    font-size: 20px;
+}
+
+.toolTip {
+    color: #808080;
+}
+
+.card.drag {
+    border: 1px solid #000 !important;
+}
+
+.card.drag:hover {
+    border: 1px solid #000 !important;
+    opacity: initial;
+}

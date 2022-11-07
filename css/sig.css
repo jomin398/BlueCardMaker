@@ -1,0 +1,24 @@
+.sigCon {
+    background-color: #fff;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    min-width: inherit;
+    min-height: inherit;
+}
+
+.sigCon .sigtopIcon {
+    right: 38px;
+}
+
+.sigCon .sigtopIcon.show {
+    display: block;
+}
+
+.sigCon .shicon {
+    left: 13px;
+}
+
+.sigCon .sigc {
+    left: 10px;
+}

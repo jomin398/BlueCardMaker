@@ -1,0 +1,39 @@
+body {
+    background-color: #000;
+    color: #cfcfcf;
+    margin: auto;
+}
+
+.magS{
+    margin: auto;
+}
+
+.show {
+    display: block !important;
+}
+
+main .note{
+    display: block;
+    text-align: center;
+    white-space: pre-line;
+    padding: 0;
+    margin: 0;
+}
+.note h3{
+    margin: 0;
+}
+.note p{
+    margin: 0;
+}
+
+@font-face {
+    font-family: "hanko";
+    src: url('../fonts/DFShinTen-W5-WIN-RKSJ-H-01.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "GmarketSansMedium";
+    src: url('../fonts/GmarketSansMedium.woff2') format("woff2");
+    font-weight: 500;
+    font-style: normal
+}

@@ -1,0 +1,177 @@
+img[src=""] {
+  border: 1px solid black;
+}
+.card.right img#id_top{
+ width: 320px;
+ height: 39px;
+}
+.card.right {
+  position: relative;
+  overflow: hidden;
+}
+
+.card.right .shicon {
+  width: 120px;
+  height: 120px;
+  left: unset;
+  top: 45px;
+  right: -5px;
+}
+
+.card.right .info {
+  width: inherit;
+  height: 200px;
+  margin-top: -43px;
+}
+
+.card.right ruby {
+  font-size: 20px;
+  z-index: 1;
+}
+
+.info .logo {
+  display: none;
+  position: absolute;
+  top: -15px;
+  width: 80px;
+  height: 80px;
+  left: 6px;
+}
+
+.info .logo.show {
+  display: block;
+}
+
+.info .shName.top {
+  position: absolute;
+  letter-spacing: -1.6px;
+  left: 80px;
+  font-weight: bolder;
+}
+
+.info .shName.bott {
+  position: absolute;
+  letter-spacing: -0.7px;
+  top: 38px;
+  left: 67px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  -webkit-text-stroke: thin;
+}
+
+.mid {
+  position: absolute;
+  top: 60px;
+  display: flex;
+  width: inherit;
+  align-items: stretch;
+}
+
+.mid .card {
+  display: flex;
+  background: unset;
+  width: 100%;
+  font-size: 13px;
+  margin: 0;
+  text-align: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mid .card div {
+  display: flex;
+  align-content: center;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.mid .card div span {
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+}
+
+.mid .card div :nth-child(2) {
+  margin-left: 5px;
+}
+
+.mid .card div:nth-child(2) :last-child {
+  flex: unset;
+}
+
+.mid .card div :last-child {
+  flex: 1;
+}
+
+.mid img {
+  width: 80px;
+  height: 80px;
+  margin: 0 5px;
+}
+
+.mid .club_img {
+  border: 1px solid black;
+  width: 50px;
+  height: 15px;
+  margin-left: 5px;
+  margin-right: unset;
+}
+
+.bottom {
+  width: 325px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.info .bottom .text {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  white-space: pre-line;
+}
+
+.hanko {
+  position: relative;
+  border: 1px solid #ED1B23;
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  min-height: 65px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #ED1B23 inset;
+  display: flex;
+  align-items: center;
+  transform: scale(0.9);
+  margin-bottom: -3px;
+}
+
+.hanko .i {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  border: 1px solid #ED1B23;
+  margin: 1px;
+  border-radius: 5px;
+}
+
+.hanko .t {
+  top: 0;
+  bottom: 0;
+  left: -6px;
+  right: 0;
+  position: absolute;
+  font-weight: bold;
+  color: #ED1B23;
+  font-family: 'hanko';
+  letter-spacing: -7px;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

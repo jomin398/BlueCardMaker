@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueArchive Card Gen</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/blueArchBtn.css">
+    <link rel="stylesheet" href="css/init.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/icon.css">
+
+    <link rel="stylesheet" href="css/sig.css">
+    <link rel="stylesheet" href="./css/signature.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/right.css">
+    <script src="src/index.js" type="module"></script>
+</head>
+
+<body>
+    <main class="init">
+        <h1>BlueArchive Card Gen</h1>
+        <div class="cont flx_w cent">
+            <div class="card hori right wbk">
+                <img src="./icons/id_top.svg" id="id_top">
+                <img class="shicon show" src="./icons/shaleIcon.png">
+                <div class="info">
+                    <img class="logo show" src="./logos/Millennium.png">
+                    <span class="shName top">ミレニアムサイエンススクール</span>
+                    <span class="shName bott">Millemium</span>
+                    <div class="mid">
+                        <img src="assets/Aris.png">
+                        <div class="cont">
+                            <div>
+                                <span>学生番号</span>
+                                <span id="num">A204E0052</span>
+                            </div>
+                            <div>
+                                <span>部活</span>
+                                <span id="club">ゲーム開発部</span><img class="club_img" src="assets/game_icon.png" alt="">
+                            </div>
+                            <div>
+                                <span>生年月日</span>
+                                <span>12月 15日</span>
+                            </div>
+                            <div>
+                                <span>氏名</span>
+                                <ruby>天(てん)童(どう)ア()リ()ス()</ruby>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <span class="text">上記の生徒は本校の学生であることを証明する。
+                            ミレニアム科学学校 校長
+                        </span>
+                        <div class="hanko">
+                            <span class="i"></span>
+                            <span class="t">ミレニアム<br>
+                                科学学校<br>
+                                校生長</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cover">
+                    <a href="#modal-options" class="button call-modal"><button class="blue main">edit?</button></a>
+                    <button class="blue main">save?</button>
+                </div>
+            </div>
+            <div class="card sig veti card_strp" title="Please sign up the card?">
+                <div class="sigCon">
+                    <!-- <img class="bk" src="./cardTemp.png" alt=""> -->
+                    <img class="sigtopIcon show" src="./icons/topbox.svg" alt="">
+                    <img class="shicon show" src="./icons/shaleIcon.png" alt="">
+                    <div class="sigc show ready">
+                        <span>Signature</span>
+                        <img class="sigbk" src="./icons/sigBk.svg" alt="">
+                        <canvas id="signature-pad"></canvas>
+                    </div>
+                </div>
+                <div class="cover">
+                    <a href="#modal-options_sig" class="button call-modal"><button
+                            class="blue main">edit?</button></a><br>
+                    <button class="blue main">save?</button>
+                </div>
+            </div>
+            <div class="card veti dev">
+                <h4>Card 3</h4>
+                <p>Under construction</p>
+                <!-- <a href="./bCard_index.html">but here.</a> -->
+            </div>
+        </div>
+
+        <div class="note">
+            <h3>Note</h3>
+            <p>This is DEMO PAGE. Shows Only implements functions.</p>
+        </div>
+    </main>
+    <section class="modal--show editForm" id="modal-options" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+        aria-hidden="true">
+        <div class="modal-inner">
+            <header>
+                <h2 id="modal-label">Edit Options</h2>
+            </header>
+
+            <form id="edit">
+                <div class="modal-content">
+                    <div>
+                        <label>custom?</label>
+                        <input type="checkbox" name="custom">
+                    </div>
+                    <div>
+                        <label>Location</label>
+                        <div class="loc">
+                            <select name="loc" id="loc">
+                                <option value="Abydos">アビドス</option>
+                                <option value="Gehenna">ゲヘナ</option>
+                                <option value="Millennium" selected>ミレニアム</option>
+                                <option value="Trinity">トリニティ</option>
+                                <option value="Haykkiyako">百鬼夜行</option>
+                                <option value="Shanhaijin">山海経</option>
+                                <option value="RedWinterUni">レッドウィンター</option>
+                                <option value="Valkyrie">ヴァルキューレ</option>
+                                <option value="SRT">SRT</option>
+                                <option value="Arius">アリウス</option>
+                                <option value="Schale">シャーレ</option>
+                                <option value="Extra">エキストラ</option>
+                            </select>
+                            <img class="locSel" src="./logos/Millennium.png">
+                        </div>
+                    </div>
+                    <div>
+                        <label>ID</label>
+                        <input type="text" name="id" placeholder="A204E0052"><br>
+                        <label>random</label>
+                        <input type="checkbox" name="idRend">
+                    </div>
+                    <div class="club">
+                        <label>club (部活)</label>
+                        <input type="text" name="club" placeholder="ゲーム開発部">
+                        <!-- <img class="clubIcon" width="50px" height="20px"> -->
+
+                        <label>club icon</label>
+                        <input type="file" name="clubIcon">
+                    </div>
+                    <div>
+                        <label>生年月日</label>
+                        <input type="date" name="btd" value="2000-12-15">
+                    </div>
+                    <div class="name">
+                        <label>氏名 (Name)</label>
+                        <input type="text" name="name" placeholder="天(てん)童(どう)ア()リ()ス()"><br>
+                        <label>name rendering preview</label><br>
+                        <ruby class="name pre"></ruby>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <a href="#" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">x</a>
+    </section>
+    <section class="modal--show editForm" id="modal-options_sig" tabindex="-1" role="dialog"
+        aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-inner">
+            <header>
+                <h2 id="modal-label">Edit Options</h2>
+            </header>
+
+            <form id="edit">
+                <div class="modal-content">
+                    <label>custom layout</label>
+                    <!-- <div class="card veti drag">
+                        <div class="sigCon">
+                            <img class="sigtopIcon show" src="./icons/topbox.svg" alt="">
+                            <img class="shicon show" src="./icons/shaleIcon.png" alt="">
+                            <div class="sigc show ready">
+                                <span>Signature</span>
+                                <img class="sigbk" src="./icons/sigBk.svg" alt="">
+                                <canvas id="signature-pad"></canvas>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </form>
+
+        </div>
+        <a href="" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">x</a>
+    </section>
+    <footer></footer>
+</body>
+
+</html>

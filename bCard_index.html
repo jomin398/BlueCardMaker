@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/id_old.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image@latest/src/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@latest/dist/barcodes/JsBarcode.code128.min.js"></script>
+    <script src="./src/L10N/localTrans.js"></script>
+    <script src="./src/L10N/index.js"></script>
+    <script src="./src/BlueCard/index.js"></script>
+    <!-- <script src="./src/index.js"></script> -->
+    <script>
+        class Blue extends BlueCard {
+            constructor(trasScrc, editEnable, elmQstr,turl) {
+                super();
+                this.init(trasScrc, editEnable, elmQstr,turl)
+                    .then(() => this.reflash()).then(() => this.apply())
+            }
+            change(data) {
+                this.apply(data);
+            }
+        };
+        window.onload = () => {
+            //#templateUrl = './template.html';
+            new Blue(localText, true, 'char_info_wrap','./src/BlueCard/template.html')
+        }
+    </script>
+</head>
+
+<body>
+    <div class="char_info_wrap"></div>
+</body>
+
+</html>
