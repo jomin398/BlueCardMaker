@@ -11,7 +11,7 @@
         }
     }
  */
-class draggableDiv {
+export default class draggableDiv {
     /**
      * @param {HTMLElement} elmnt
      */
