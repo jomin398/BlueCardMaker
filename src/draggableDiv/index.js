@@ -24,7 +24,13 @@ export default class draggableDiv {
         this.isNotMob = this.#ckNotMob();
         this.removeMoveEv = null;
         this.#addEL();
+        this.onmoveFin = null;
+        this.spos = {
+            x: 0,
+            y: 0
+        }
     }
+    #savPos(x, y) { }
     #addEL() {
         if (!this.isNotMob) {
             this.removeMoveEv = () => {
@@ -34,16 +40,20 @@ export default class draggableDiv {
             this.ele.ontouchmove = e => {
                 // grab the location of touch
                 var tloc = e.targetTouches[0];
-
+                var bb = e.target.getBoundingClientRect();
                 // assign box new coordinates based on the touch.
-                this.ele.style.left = (tloc.pageX - 10) + 'px';
-                this.ele.style.top = (tloc.pageY - 10) + 'px';
+                let x = tloc.pageX - bb.x;
+                let y = tloc.pageY - bb.y;
+                this.ele.style.left = `${x}px`;
+                this.ele.style.top = `${y}px`;
+                this.spos.x = x;
+                this.spos.y = y;
             };
             this.ele.ontouchend = e => {
                 // current box position.
                 // var x = parseInt(this.ele.style.left);
                 // var y = parseInt(this.ele.style.top);
-                console.log(this.ele.classList, this.ele.id)
+                if (this.onmoveFin) this.onmoveFin(e, this);
             }
         } else {
             this.ele.onmousedown = evt => this.#dragMouseDown(evt);
@@ -60,7 +70,7 @@ export default class draggableDiv {
         // get the mouse cursor position at startup:
         this.pos3 = e.clientX;
         this.pos4 = e.clientY;
-        this.ele.onmouseup = () => this.#closeDragElement();
+        this.ele.onmouseup = (e) => this.#closeDragElement(e);
         // call a function whenever the cursor moves:
         this.ele.onmousemove = evt => this.#elementDrag(evt);
     }
@@ -72,10 +82,15 @@ export default class draggableDiv {
         this.pos3 = e.clientX;
         this.pos4 = e.clientY;
         // set the element's new position:
-        this.ele.style.top = (this.ele.offsetTop - this.pos2) + "px";
-        this.ele.style.left = (this.ele.offsetLeft - this.pos1) + "px";
+        let x = this.ele.offsetTop - this.pos2;
+        let y = this.ele.offsetLeft - this.pos1;
+        this.ele.style.top = x + "px";
+        this.ele.style.left = y + "px";
+        this.spos.x = x;
+        this.spos.y = y;
     }
-    #closeDragElement() {
+    #closeDragElement(e) {
+        if (this.onmoveFin) this.onmoveFin(e, this);
         /* stop moving when mouse button is released:*/
         this.ele.onmouseup = null;
         this.ele.onmousemove = null;

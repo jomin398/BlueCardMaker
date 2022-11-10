@@ -4,7 +4,7 @@ body {
     margin: auto;
 }
 
-.magS{
+.magS {
     margin: auto;
 }
 
@@ -12,17 +12,19 @@ body {
     display: block !important;
 }
 
-main .note{
+main .note {
     display: block;
     text-align: center;
     white-space: pre-line;
     padding: 0;
     margin: 0;
 }
-.note h3{
+
+.note h3 {
     margin: 0;
 }
-.note p{
+
+.note p {
     margin: 0;
 }
 
@@ -36,4 +38,14 @@ main .note{
     src: url('../fonts/GmarketSansMedium.woff2') format("woff2");
     font-weight: 500;
     font-style: normal
+}
+
+.mobShow {
+    display: none;
+}
+
+@media screen and (max-width: 30em) {
+    .mobShow {
+        display: block;
+    }
 }

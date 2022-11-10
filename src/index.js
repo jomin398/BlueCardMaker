@@ -38,6 +38,9 @@ class card2 {
         rsBtn.innerText = 'Reset';
         rsBtn.onclick = () => this.r();
         elmSelter(this.#selfElq).insertAdjacentElement('beforebegin', rsBtn);
+        elmSelter('section#modal-options_sig > a.modal-close').onclick = () => {
+            console.log(this.d)
+        }
     }
     #selfElq = 'section#modal-options_sig #edit .card';
     #rseTmp = `<div class="sigCon">
@@ -53,21 +56,22 @@ class card2 {
     i() {
         let coverInit = document.createElement('div');
         coverInit.className = 'edit cover';
-        coverInit.innerText = 'Click to begin Edit.';
+        coverInit.innerHTML = `<p>Click to begin Edit.</p><span class="mobShow">Flash Warning on CustomEditor</span>`;
 
         elmSelter(`${this.#selfElq} .sigCon`).insertAdjacentElement('beforeend', coverInit);
         elmSelter(this.#selfElq).onclick = (e) => {
             coverInit.remove();
             e.preventDefault();
             this.d = Array.from(elmSelter(`${this.#selfElq} .sigCon`).children).map(e => {
+                let drag = new draggableDiv(e);
                 e.onclick = (ev) => {
                     ev.preventDefault();
                     console.log('clicked.', ev.target);
-                }; //,ev.target
-                return new draggableDiv(e);
+                };
+                return drag;
             });
-            elmSelter(this.#selfElq).onclick = '';
         }
+
     };
     //reset
     r() {
